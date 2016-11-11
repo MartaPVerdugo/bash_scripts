@@ -25,10 +25,7 @@ H3="$2"
 my_file="$3"
 mytest="$4"
 
-#echo "$H1" "$H2" "$my_file" "$mytest"
-# awk prints all lines starting with Sub1, *, Hariana, then awk prints out of those, those who end in Hariana only.
-# end output you get the tests for Sub1, Test, Hariana, outgroup
-#awk '$H1' "$my_file"
+#grab test(s) of interest
 
 awk '/'$H1'.**.*'$H3'/' "$my_file"  | awk "\$3==\"$H3\"" > "$mytest".txt
 
